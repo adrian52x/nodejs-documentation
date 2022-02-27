@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrian52x/nodejs-documentation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrian52x/nodejs-documentation/issues"
+  },
+  "homepage": "https://github.com/adrian52x/nodejs-documentation#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
