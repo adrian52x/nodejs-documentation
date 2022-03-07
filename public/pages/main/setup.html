@@ -1,0 +1,106 @@
+<div class="page">
+    <section class="section">
+        <div class="section-title"><h1>Project Setup</h1>
+            <hr>
+        </div>
+
+        <div class="section-subtitle"><h3>Assuming you’ve already installed Node.js, create a directory to hold your application, and make that your working directory.</h3></div>
+        <div class="terminal">
+            <p>$ mkdir myapp <br>
+               $ cd myapp
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Use the npm init command to create a <b>package.json</b> file for your application. For more information on how package.json works, see <a href="https://docs.npmjs.com/cli/v8/configuring-npm/package-json">Specifics of npm’s package.json handling.</a> </h3></div>
+        <div class="terminal">
+            <p>$ npm init <br>
+               // OR <br>
+               $ npm init -y
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Now install Express in the myapp directory and save it in the dependencies list. For example:</h3></div>
+        <div class="terminal">
+            <p>$ npm install express
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>To install Express temporarily and not add it to the dependencies list:</h3></div>
+        <div class="terminal">
+            <p>$ npm install express --no-save
+            </p>
+        </div>
+        <div class="comment">
+            <p>By default with version npm 5.0+ npm install adds the module to the dependencies list in the package.json file; with earlier versions of npm, you must specify the --save option explicitly. Then, afterwards, running npm install in the app directory will automatically install modules in the dependencies list.</p>
+        </div>
+        
+        <br><hr>
+
+        <div class="section-subtitle"><h2> Express.js overview </h2></div>
+        <div class="important-message">
+            <p>The most common use for Node.js is writing Web applications, and a large percentage of these web applications today are using <a href="https://expressjs.com/">Express.js</a> as their server framework. Express can be used to create JSON APIs, Server-side rendered web applications, or Microservices.
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Create app.js (or whatever you want the name of the main file to be) and Import Express framework into our Node.js application.</h3></div>
+        <div class="code-snip">
+            <pre class="line-numbers">
+                <code class="language-javascript">
+                    const express = require('express')
+                    const app = express()
+                    const port = 3000
+                    
+                    app.get('/', (req, res) => {
+                      res.send('Hello World!')
+                    })
+                    
+                    app.listen(port, () => {
+                      console.log(`Example app listening on port ${port}`)
+                    })
+                </code>
+            </pre>
+        </div>
+        
+
+        <div class="section-subtitle"><h3>Run the app with the following command:</h3></div>
+        <div class="terminal">
+            <p>$ node app.js
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Then, load <b>http://localhost:3000/</b>   in a browser to see the output. <br>
+            This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.</h3>
+        </div>
+        <br><hr>
+
+
+        <div class="section-subtitle"><h2> Install Nodemon for Auto-restarts </h2></div>   
+        <div class="section-subtitle"><h3>Nodemon is a command-line interface (CLI) utility developed by rem(https://twitter.com/rem) that wraps your Node app, watches the file system, and automatically restarts the process.
+            <br><br>
+            You can install nodemon globally with NPM:
+        </h3></div>
+        <div class="terminal">
+            <p>$ npm install nodemon -g
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Once installed, we can use nodemon to start a Node script. Since we have an “app.js” file in our project, we can start it and watch for changes like this:
+        </h3></div>
+        <div class="terminal">
+            <p>$ nodemon app.js
+            </p>
+        </div>
+
+        
+            
+    </section>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
