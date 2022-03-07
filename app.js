@@ -11,6 +11,8 @@ const portal = fs.readFileSync("./public/pages/portal/portal.html").toString();
 const mainpage = fs.readFileSync("./public/pages/main/main.html").toString();
 const installNode = fs.readFileSync("./public/pages/main/install-node.html").toString();
 const setup = fs.readFileSync("./public/pages/main/setup.html").toString();
+const tCommands = fs.readFileSync("./public/pages/main/commands.html").toString();
+const scripts = fs.readFileSync("./public/pages/main/npm-scripts.html").toString();
 
 app.get("/", (req,res) => {
     res.send(portal);
@@ -27,10 +29,16 @@ app.get("/install-nodejs", (req,res) => {
 app.get("/setup", (req,res) => {
     res.send(header + setup);
 });
+
+app.get("/commands", (req,res) => {
+    res.send(header + tCommands);
+});
+
+app.get("/scripts", (req,res) => {
+    res.send(header + scripts);
+});
  
-
-
-
+ 
 
 
 

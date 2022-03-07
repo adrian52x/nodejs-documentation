@@ -1,0 +1,104 @@
+<div class="page">
+    <section class="section">
+        <div class="section-title"><h1>NPM Scripts</h1>
+            <hr>
+        </div>
+
+        <div class="section-subtitle"><h2>What are NPM scripts?</h2></div>
+        <div class="section-subtitle"><h3>NPM Scripts are a set of built-in and custom scripts defined in the <b> package.json</b> file. Their goal is to provide a simple way to execute repetitive tasks. <br><br>
+            Common use cases for npm scripts are:
+            <li>building your Node project (think of multiple environments like develop and production)</li>
+            <li>starting a development server</li>
+            <li>compiling SCSS to CSS</li>
+            <li>linting</li>
+            <li>minifying</li>
+            <li>testing</li>
+            <li>basically anything you repetitive type in the shell during the project.</li>
+        </h3></div>
+       
+        <div class="section-subtitle"><h2>Simple NPM script</h2></div>
+
+        <div class="code-snip">
+            <pre class="line-numbers">
+                <code class="language-json">
+                    //package.json
+                    {
+                        "name": "nodejs-documentation",
+                        "version": "1.0.0",
+                        "description": "",
+                        "main": "app.js",
+
+                        "scripts": {
+                            <b>"start": "node app.js"</b> 
+                        }
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <div class="terminal">
+            <p>$ npm run start
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Running <i>npm run start</i>  with the above script would start a node server.</h3></div>
+        <hr>
+
+        <div class="code-snip">
+            <pre class="line-numbers">
+                <code class="language-json">
+                    //package.json
+                    {
+                        "name": "nodejs-documentation",
+                        "version": "1.0.0",
+                        "description": "",
+                        "main": "app.js",
+
+                        "scripts": {
+                               <b>"start-dev": "cross-env PORT=3000 nodemon app.js",
+                               "start": "node app.js"</b>
+                            
+                        }
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <div class="terminal">
+            <p>$ npm run start-dev
+            </p>
+        </div>
+
+        <div class="section-subtitle"><h3>Running <i>npm run start-dev</i>  would first set the PORT environment variable to 3000, then start the application with <i>nodemon</i>  </h3></div>
+        <hr>
+
+        <div class="section-subtitle"><h2>Using Environment Variables</h2></div>
+        <div class="section-subtitle"><h3>You may be setting a port number for an Express server. Often the port in a different environment (e.g.; staging, testing, production) may have to be changed based on policies and to avoid conflicts with other apps. As a developer, you shouldn’t care about this, and really, you don’t need to. Here is how you can use an environment variable in code to grab the port.</h3></div>
+
+        <div class="code-snip">
+            <pre class="line-numbers">
+                <code class="language-json">
+                    //app.js
+
+                    <b>const port = process.env.PORT;</b>
+                    
+                    const server = app.listen(PORT, () => {
+                    console.log(`Server is listening on port`, server.address().port);
+                    });
+                </code>
+            </pre>
+        </div>
+        
+      
+
+    </section>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
